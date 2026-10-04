@@ -16,13 +16,13 @@ export function Experience() {
         <div className="flex flex-col gap-2 mb-16">
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs tracking-widest uppercase">
             <Terminal className="w-3.5 h-3.5" />
-            <span>04 // CAREER TELEMETRY & IMPACT</span>
+            <span>04 // EDUCATION & ENGINEERING JOURNEY</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white font-sans tracking-tight">
-            Work history, systems built & roles.
+            Academic foundations, hackathons & systems built.
           </h2>
           <p className="text-slate-400 max-w-2xl text-sm sm:text-base mt-1">
-            Track record of shipping production code, optimizing critical paths, and mentoring engineering teams.
+            Pursuing Computer Engineering at Sir Visvesvaraya Institute of Technology (SVIT) while designing full-stack applications and real-time backend services.
           </p>
         </div>
 

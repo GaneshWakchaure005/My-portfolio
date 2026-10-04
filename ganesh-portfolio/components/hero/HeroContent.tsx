@@ -105,7 +105,7 @@ export function HeroContent({ containerRef }: HeroContentProps) {
                 Stack:
               </span>
             </span>
-            {DEVELOPER_INFO.metadataTags.map((tech, idx) => (
+            {DEVELOPER_INFO.metadataTags.map((tech: string, idx: number) => (
               <span
                 key={tech}
                 className="inline-flex items-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-slate-900/60 border border-slate-800/80 text-slate-300 transition-colors hover:border-cyan-500/40 hover:text-cyan-300 text-[11px] sm:text-xs"

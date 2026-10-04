@@ -101,7 +101,7 @@ export function About() {
               </div>
               <div className="flex justify-between items-center py-1.5">
                 <span className="text-slate-400">SPECIALIZATION:</span>
-                <span className="text-slate-200 text-right">MERN, Next.js, WebGL & Distributed Cloud</span>
+                <span className="text-slate-200 text-right">React.js, Node.js, Express & MongoDB (MERN)</span>
               </div>
             </div>
 

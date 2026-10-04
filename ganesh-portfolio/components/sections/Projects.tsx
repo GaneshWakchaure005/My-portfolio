@@ -93,15 +93,17 @@ export function Projects() {
 
                 {/* Actions */}
                 <div className="flex items-center gap-4 pt-4">
-                  <a
-                    href={primaryProject.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200 text-xs font-mono font-medium transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600"
-                  >
-                    <GithubIcon className="w-4 h-4" />
-                    <span>VIEW SOURCE</span>
-                  </a>
+                  {primaryProject.githubUrl && (
+                    <a
+                      href={primaryProject.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200 text-xs font-mono font-medium transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600"
+                    >
+                      <GithubIcon className="w-4 h-4" />
+                      <span>VIEW SOURCE</span>
+                    </a>
+                  )}
                   {primaryProject.liveUrl && (
                     <a
                       href={primaryProject.liveUrl}
@@ -224,15 +226,19 @@ export function Projects() {
 
                 {/* Links */}
                 <div className="flex items-center justify-between pt-2">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-white transition-colors"
-                  >
-                    <GithubIcon className="w-3.5 h-3.5" />
-                    <span>CODE</span>
-                  </a>
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-white transition-colors"
+                    >
+                      <GithubIcon className="w-3.5 h-3.5" />
+                      <span>CODE</span>
+                    </a>
+                  ) : (
+                    <span className="text-[11px] font-mono text-slate-600">IN DEVELOPMENT</span>
+                  )}
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}

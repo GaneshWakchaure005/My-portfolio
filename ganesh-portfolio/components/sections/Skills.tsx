@@ -74,9 +74,11 @@ export function Skills() {
                             {skill.level}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 font-normal pl-5">
-                          {skill.detail}
-                        </p>
+                        {skill.detail && (
+                          <p className="text-xs text-slate-400 font-normal pl-5">
+                            {skill.detail}
+                          </p>
+                        )}
                       </div>
                     ))}
                   </div>
