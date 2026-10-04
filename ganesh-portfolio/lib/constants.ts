@@ -1,28 +1,32 @@
-export const NETWORK_CONFIG = {
-  NODE_COUNT: 75,
-  MOBILE_NODE_COUNT: 28,
-  MAJOR_NODE_COUNT: 8,
-  MAX_CONNECTION_DISTANCE: 2.3,
-  CURSOR_RADIUS: 2.1, // in 3D world units (mapped to ~180-220px)
-  NODE_PULL_STRENGTH: 0.32,
-  NODE_GLOW_STRENGTH: 0.9,
-  DATA_PACKET_COUNT: 5,
-  PARALLAX_STRENGTH: 0.35,
-  AMBIENT_PARTICLE_COUNT: 90,
-  MOBILE_PARTICLE_COUNT: 30,
-  PACKET_SPEED_MIN: 0.5,
-  PACKET_SPEED_MAX: 1.1,
-  COLORS: {
-    NODE_BASE: '#0f2942',
-    NODE_MAJOR: '#0284c7',
-    NODE_ACTIVE: '#38bdf8',
-    NODE_HIGHLIGHT: '#00f0ff',
-    LINE_BASE: '#091c2e',
-    LINE_ACTIVE: '#38bdf8',
-    LINE_HIGHLIGHT: '#67e8f9',
-    PACKET: '#00f0ff',
-    AMBIENT_PARTICLE: '#38bdf8',
+export const AURORA_CONFIG = {
+  PARTICLE_COUNT: 42,
+  MOBILE_PARTICLE_COUNT: 16,
+  STREAK_COUNT: 4,
+  CURSOR_FIELD_RADIUS: 220, // in pixels
+  PARALLAX: {
+    BACKGROUND: 3,
+    AURORA: 8,
+    PARTICLES: 12,
+    PORTRAIT: 12,
+    FOREGROUND: 2,
   },
+  COLORS: {
+    CYAN_LIGHT: '#00BFFF',
+    BLUE_VIBRANT: '#008CFF',
+    BLUE_DEEP: '#0066FF',
+    NAVY_DEEP: '#020814',
+    WHITE_BLUE: '#e0f2fe',
+    AMBIENT_GLOW: 'rgba(0, 191, 255, 0.22)',
+  },
+};
+
+export const PORTRAIT_CONFIG = {
+  LOCAL_IMAGE: '/images/ganesh-profile.png',
+  FALLBACK_IMAGE: "https://res.cloudinary.com/did8mktr3/image/upload/v1791113757/ganesh-photo_zi5zvw.webp",
+  TILT_MAX_X: 3.5, // degrees
+  TILT_MAX_Y: 4.5, // degrees
+  SHIFT_MAX_X: 14, // pixels
+  SHIFT_MAX_Y: 8,  // pixels
 };
 
 export const DEVELOPER_INFO = {

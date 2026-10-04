@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* Main Content Sections */}
       <main className="flex-1 w-full">
-        {/* Interactive Neural Network Hero Section */}
+        {/* Interactive Digital Aurora & Developer Portrait Hero Section */}
         <Hero />
 
         {/* Section 01: Architectural Bio & System Telemetry */}
