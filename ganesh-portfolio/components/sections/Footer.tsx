@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Terminal, ArrowUp } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterXIcon } from "@/components/ui/Icons";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/Icons";
 import { DEVELOPER_INFO } from "@/lib/constants";
 
 export function Footer() {
@@ -42,7 +42,7 @@ export function Footer() {
             <a
               href={DEVELOPER_INFO.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="GitHub"
               className="p-1.5 rounded hover:text-cyan-400 transition-colors"
             >
@@ -51,20 +51,20 @@ export function Footer() {
             <a
               href={DEVELOPER_INFO.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="p-1.5 rounded hover:text-cyan-400 transition-colors"
             >
               <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
-              href={DEVELOPER_INFO.twitter}
+              href={DEVELOPER_INFO.instagram}
               target="_blank"
-              rel="noreferrer"
-              aria-label="Twitter"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
               className="p-1.5 rounded hover:text-cyan-400 transition-colors"
             >
-              <TwitterXIcon className="w-4 h-4" />
+              <InstagramIcon className="w-4 h-4" />
             </a>
           </div>
 

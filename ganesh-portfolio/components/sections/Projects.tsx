@@ -98,9 +98,9 @@ export function Projects() {
                       href={primaryProject.githubUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200 text-xs font-mono font-medium transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 text-xs font-mono font-bold transition-all hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98]"
                     >
-                      <GithubIcon className="w-4 h-4" />
+                      <GithubIcon className="w-4 h-4 text-slate-950" />
                       <span>VIEW SOURCE</span>
                     </a>
                   )}
@@ -109,7 +109,7 @@ export function Projects() {
                       href={primaryProject.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 text-xs font-mono font-medium transition-all hover:bg-cyan-500/30 hover:text-white hover:shadow-[0_0_20px_rgba(0,240,255,0.25)]"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-400/15 border border-amber-400/50 text-amber-300 text-xs font-mono font-medium transition-all hover:bg-amber-400/25 hover:text-white hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]"
                     >
                       <span>LIVE DEMO</span>
                       <ExternalLink className="w-4 h-4" />
@@ -244,7 +244,7 @@ export function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors group-hover:underline"
+                      className="inline-flex items-center gap-1 text-xs font-mono text-amber-400 hover:text-amber-300 transition-colors group-hover:underline font-medium"
                     >
                       <span>LIVE DEMO</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />

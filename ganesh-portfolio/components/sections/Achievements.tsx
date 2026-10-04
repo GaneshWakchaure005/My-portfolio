@@ -35,23 +35,23 @@ export function Achievements() {
             return (
               <div
                 key={item.title}
-                className="rounded-2xl p-6 glass-panel glass-panel-hover flex flex-col justify-between group"
+                className="rounded-2xl p-6 glass-panel glass-panel-hover flex flex-col justify-between group border-amber-500/20 hover:border-amber-400/40"
               >
                 <div>
                   <div className="flex items-center justify-between pb-4 border-b border-slate-800/80 mb-5">
-                    <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:border-cyan-400/60 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-amber-500/15 border border-amber-400/40 flex items-center justify-center text-amber-400 group-hover:border-amber-400 group-hover:shadow-[0_0_15px_rgba(245,158,11,0.3)] transition-all">
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <span className="font-mono text-xs text-slate-400">
+                    <span className="font-mono text-xs text-amber-400/90 font-medium">
                       {item.year}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-semibold text-white font-sans mb-2 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-base font-semibold text-white font-sans mb-2 group-hover:text-amber-300 transition-colors">
                     {item.title}
                   </h3>
 
-                  <div className="text-xs font-mono text-cyan-400/90 mb-3">
+                  <div className="text-xs font-mono text-amber-400/90 mb-3">
                     {item.issuer}
                   </div>
 
@@ -60,9 +60,9 @@ export function Achievements() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-slate-800/60 flex items-center gap-1.5 text-[10px] font-mono text-slate-500">
-                  <span className="w-1 h-1 rounded-full bg-cyan-400" />
-                  <span>VERIFIED RECORD</span>
+                <div className="mt-6 pt-3 border-t border-slate-800/60 flex items-center gap-1.5 text-[10px] font-mono text-amber-400/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                  <span>WINNER DISTINCTION</span>
                 </div>
               </div>
             );

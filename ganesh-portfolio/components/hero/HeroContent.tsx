@@ -4,6 +4,7 @@ import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Terminal, Sparkles } from "lucide-react";
 import { DEVELOPER_INFO } from "@/lib/constants";
+import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/Icons";
 import { Portrait } from "./Portrait";
 
 interface HeroContentProps {
@@ -126,20 +127,51 @@ export function HeroContent({ containerRef }: HeroContentProps) {
             <a
               href="#projects"
               id="hero-cta-projects"
-              className="group relative inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-cyan-500/25 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(0,240,255,0.25)] hover:text-white active:scale-[0.98]"
+              className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-slate-950 font-semibold text-xs sm:text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:scale-[1.02] active:scale-[0.98] border border-yellow-300/80 shadow-md shadow-amber-950/40"
             >
               <span>View Projects</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 font-bold" />
             </a>
 
             <a
               href="#contact"
               id="hero-cta-contact"
-              className="group inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-slate-800/80 hover:text-white hover:border-slate-700 active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-slate-900/80 border border-amber-400/30 text-amber-300 font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-amber-400/10 hover:border-amber-400 hover:text-amber-200 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] active:scale-[0.98]"
             >
               <span>Let&apos;s Connect</span>
-              <Sparkles className="w-4 h-4 text-slate-400 transition-colors duration-300 group-hover:text-cyan-400" />
+              <Sparkles className="w-4 h-4 text-amber-400 transition-transform duration-300 group-hover:rotate-12" />
             </a>
+
+            {/* Quick Social Profile Links */}
+            <div className="flex items-center gap-2">
+              <a
+                href={DEVELOPER_INFO.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile - Ganesh Wakchaure"
+                className="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-cyan-400/50 hover:bg-slate-800 transition-all"
+              >
+                <GithubIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={DEVELOPER_INFO.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile - Ganesh Wakchaure"
+                className="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-cyan-400/50 hover:bg-slate-800 transition-all"
+              >
+                <LinkedinIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={DEVELOPER_INFO.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Profile - Ganesh Wakchaure"
+                className="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-cyan-400/50 hover:bg-slate-800 transition-all"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+            </div>
           </motion.div>
         </motion.div>
 

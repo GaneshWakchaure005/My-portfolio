@@ -40,8 +40,9 @@ export const DEVELOPER_INFO = {
   email: "ganeshwakchaure801@gmail.com",
   phone: "+91 8010072112",
   github: "https://github.com/GaneshWakchaure005",
-  linkedin: "https://linkedin.com/in/ganeshwakchaure",
-  twitter: "https://x.com/ganesh_dev",
+  linkedin: "https://www.linkedin.com/in/ganesh-wakchaure-dev",
+  instagram: "https://www.instagram.com/ganesh_wakchaure_005/",
+  siteUrl: "https://ganeshwakchaure.dev",
   metadataTags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Next.js"],
 };
 
@@ -227,5 +228,8 @@ export const EDUCATION = {
 
 export const CONTACT_INFO = {
   email: "ganeshwakchaure801@gmail.com",
-  phone: "+91 8010072112"
+  phone: "+91 8010072112",
+  github: "https://github.com/GaneshWakchaure005",
+  linkedin: "https://www.linkedin.com/in/ganesh-wakchaure-dev",
+  instagram: "https://www.instagram.com/ganesh_wakchaure_005/",
 };

@@ -69,7 +69,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#contact"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-mono font-medium text-cyan-300 bg-cyan-500/10 border border-cyan-400/30 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-mono font-medium text-amber-300 bg-amber-400/10 border border-amber-400/35 hover:bg-amber-400 hover:text-slate-950 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all duration-300"
           >
             <span>CONNECT</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -107,7 +107,7 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-2 text-center py-2.5 rounded-lg bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 font-mono text-xs font-semibold"
+              className="mt-2 text-center py-2.5 rounded-lg bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 font-mono text-xs font-semibold shadow-md shadow-amber-950/50"
             >
               CONNECT WITH GANESH
             </a>
