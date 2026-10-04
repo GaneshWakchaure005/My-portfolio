@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ganesh Wakchaure | Full Stack Developer & Software Engineer",
     description:
-      "Building scalable, intelligent and user-focused web applications with React, Node.js, Express, MongoDB, and Next.js.",
+      "Building scalable full stack softwares using modern technologies. ",
     url: siteUrl,
     siteName: "Ganesh Wakchaure Portfolio",
     locale: "en_US",
@@ -92,6 +92,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: "2lMZ3QSbVeiDLs8T5CFyZVWi83mAy5CtjEwmXiw4w9k",
   },
   icons: {
     icon: "/favicon.ico",
