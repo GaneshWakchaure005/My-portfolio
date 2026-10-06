@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navigation/Navbar";
 import { Hero } from "@/components/hero/Hero";
 import { About } from "@/components/sections/About";
+import { Services } from "@/components/sections/Services";
 import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
@@ -29,6 +30,9 @@ export default function Home() {
 
         {/* Section 01: Architectural Bio & System Telemetry */}
         <About />
+
+        {/* Section: Services & Freelance Expertise */}
+        <Services />
 
         {/* Section 02: Specialized Engineering Capabilities & Toolsets */}
         <Skills />

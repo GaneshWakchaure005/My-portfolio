@@ -32,10 +32,10 @@ export const PORTRAIT_CONFIG = {
 export const DEVELOPER_INFO = {
   name: "Ganesh Wakchaure",
   initials: "GW",
-  role: "FULL STACK DEVELOPER",
-  tagline: "Building scalable, intelligent and user-focused web applications.",
-  bio: "Full stack developer specializing in modern web architecture, real-time backend services, and scalable cloud-connected applications. Experienced in developing full-stack systems from database design to reactive, responsive frontends.",
-  status: "Available for opportunities",
+  role: "FULL STACK DEVELOPER & FREELANCER",
+  tagline: "Building scalable, intelligent and user-focused web applications. Open for freelance contracts & full-stack development.",
+  bio: "Full stack developer and freelancer specializing in modern web architecture, real-time backend services, and scalable cloud-connected applications. Experienced in developing full-stack systems from database design to reactive, responsive frontends.",
+  status: "Available for Freelance & Contracts",
   location: "Nashik / Pune, India",
   email: "ganeshwakchaure801@gmail.com",
   phone: "+91 8010072112",
@@ -57,11 +57,47 @@ export const DEVELOPER_INFO = {
 
 export const NAV_LINKS = [
   { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Education", href: "#experience" },
   { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" },
+];
+
+export interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  iconName: string;
+  tags: string[];
+}
+
+export const SERVICES: ServiceItem[] = [
+  {
+    id: "product-dev",
+    title: "Product Development",
+    description:
+      "End-to-end delivery from idea to production with planning, implementation, testing, and launch support.",
+    iconName: "Code2",
+    tags: ["Full-Stack MVPs", "Next.js & React", "Responsive UI/UX"],
+  },
+  {
+    id: "backend-systems",
+    title: "API and Backend Systems",
+    description:
+      "RESTful APIs, backend structure, data flow, validation, and error handling for maintainable applications.",
+    iconName: "Server",
+    tags: ["Node.js & Express", "Database Architecture", "Auth & Security"],
+  },
+  {
+    id: "deployment-support",
+    title: "Deployment and Support",
+    description:
+      "Agile execution, CI/CD, staging workflows, monitoring, and safe releases with clear documentation.",
+    iconName: "Rocket",
+    tags: ["Cloud Infrastructure", "CI/CD Pipelines", "Ongoing Maintenance"],
+  },
 ];
 
 export interface ProjectItem {

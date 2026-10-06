@@ -127,19 +127,27 @@ export function HeroContent({ containerRef }: HeroContentProps) {
             <a
               href="#projects"
               id="hero-cta-projects"
-              className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-slate-950 font-semibold text-xs sm:text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:scale-[1.02] active:scale-[0.98] border border-yellow-300/80 shadow-md shadow-amber-950/40"
+              className="group relative inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-lg bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-slate-950 font-semibold text-xs sm:text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:scale-[1.02] active:scale-[0.98] border border-yellow-300/80 shadow-md shadow-amber-950/40"
             >
               <span>View Projects</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 font-bold" />
             </a>
 
             <a
+              href="#services"
+              id="hero-cta-services"
+              className="group inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-slate-900/80 border border-amber-400/30 text-amber-300 font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-amber-400/10 hover:border-amber-400 hover:text-amber-200 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] active:scale-[0.98]"
+            >
+              <span>Freelance Services</span>
+              <Sparkles className="w-4 h-4 text-amber-400 transition-transform duration-300 group-hover:rotate-12" />
+            </a>
+
+            <a
               href="#contact"
               id="hero-cta-contact"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-slate-900/80 border border-amber-400/30 text-amber-300 font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-amber-400/10 hover:border-amber-400 hover:text-amber-200 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 font-medium text-xs sm:text-sm transition-all duration-300 hover:border-cyan-400/50 hover:text-cyan-300 active:scale-[0.98]"
             >
               <span>Let&apos;s Connect</span>
-              <Sparkles className="w-4 h-4 text-amber-400 transition-transform duration-300 group-hover:rotate-12" />
             </a>
 
             {/* Quick Social Profile Links */}

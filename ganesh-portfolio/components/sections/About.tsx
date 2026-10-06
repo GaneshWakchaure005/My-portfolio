@@ -55,13 +55,13 @@ export function About() {
           {/* Narrative Column */}
           <div className="lg:col-span-7 flex flex-col gap-6 text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
             <p>
-              I am <span className="text-white font-medium">{DEVELOPER_INFO.name}</span>, a full stack software engineer dedicated to building software that operates reliably in real-world conditions. My work spans the entire stack—from distributed backend queues and spatial indexing engines to highly polished, responsive frontends.
+              I am <span className="text-white font-medium">{DEVELOPER_INFO.name}</span>, a full stack software engineer and freelance developer dedicated to building software that operates reliably in real-world conditions. My work spans the entire stack—from distributed backend queues and spatial indexing engines to highly polished, responsive frontends.
             </p>
             <p className="text-slate-400">
-              Rather than treating animations as superficial decoration, I view interactivity as a direct extension of user telemetry. Whether visualizing multi-gigabyte geospatial datasets at 60 frames per second or synchronizing live fleet coordinates over WebSockets, I focus on performance, clarity, and rock-solid architectural fundamentals.
+              Alongside core engineering, I actively take on <span className="text-amber-300 font-medium">freelance client projects and contract development</span>. Whether collaborating with startups on zero-to-one MVPs, building RESTful backend microservices, or engineering modern reactive web apps, I prioritize rapid delivery, architectural clarity, and production uptime.
             </p>
             <p className="text-slate-400">
-              My engineering philosophy revolves around simplicity, modular decoupling, and verifiable uptime. When I design a system, it is built to scale gracefully, withstand traffic spikes, and deliver exceptional developer and end-user experiences.
+              My engineering philosophy revolves around simplicity, modular decoupling, and verifiable performance. When I design a system, it is built to scale gracefully, withstand traffic spikes, and deliver exceptional developer and end-user experiences.
             </p>
           </div>
 
@@ -98,6 +98,10 @@ export function About() {
               <div className="flex justify-between items-center py-1.5 border-b border-slate-800/50">
                 <span className="text-slate-400">STATUS:</span>
                 <span className="text-emerald-400">{DEVELOPER_INFO.status}</span>
+              </div>
+              <div className="flex justify-between items-center py-1.5 border-b border-slate-800/50">
+                <span className="text-slate-400">ENGAGEMENT:</span>
+                <span className="text-amber-300">Freelance, Sprints & Contracts</span>
               </div>
               <div className="flex justify-between items-center py-1.5">
                 <span className="text-slate-400">SPECIALIZATION:</span>
