@@ -11,7 +11,7 @@ import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full max-w-full overflow-x-hidden bg-[#020814] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-white">
+    <div className="relative min-h-screen w-full bg-[#020814] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-white">
       {/* Skip to Main Content Link for Screen Readers and Keyboard Accessibility */}
       <a
         href="#main-content"
@@ -24,7 +24,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content Sections */}
-      <main id="main-content" className="flex-1 w-full max-w-full overflow-x-hidden" tabIndex={-1}>
+      <main id="main-content" className="flex-1 w-full" tabIndex={-1}>
         {/* Interactive Digital Aurora & Developer Portrait Hero Section */}
         <Hero />
 

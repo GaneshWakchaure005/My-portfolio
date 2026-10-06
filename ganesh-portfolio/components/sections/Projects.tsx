@@ -179,11 +179,13 @@ export function Projects() {
     <section
       id="projects"
       aria-label="Engineered Projects & Systems"
-      className="relative w-full py-28 px-4 sm:px-8 lg:px-16 border-t border-slate-900 bg-[#020814] overflow-hidden"
+      className="relative w-full py-28 px-4 sm:px-8 lg:px-16 border-t border-slate-900 bg-[#020814]"
     >
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* Background ambient lighting - clipped in its own container so section sticky is unaffected */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[140px]" />
+      </div>
 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
