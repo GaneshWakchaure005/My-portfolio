@@ -1,258 +1,222 @@
 "use client";
 
-import React, { useState } from "react";
-import { Terminal, ExternalLink, Sparkles, Layers, Activity, ArrowUpRight } from "lucide-react";
+import React from "react";
+import Image from "next/image";
+import {
+  Terminal,
+  Sparkles,
+  ArrowUpRight,
+  ImageIcon,
+} from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
-import { PROJECTS, ProjectItem } from "@/lib/constants";
+import { PROJECTS, type Project } from "@/lib/projects";
+
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+  total: number;
+}
+
+function ProjectCard({ project, index, total }: ProjectCardProps) {
+  return (
+    <div
+      className="sticky w-full mb-20 sm:mb-28 lg:mb-36 last:mb-0"
+      style={{
+        // Each card stops slightly lower than the previous one, stacking in view
+        top: `calc(4.75rem + ${index * 32}px)`,
+        zIndex: 10 + index,
+      }}
+    >
+      {/* Outer Card with Static Sharp Light-Color Gradient Border (pink, red, yellow, sky blue, white) */}
+      <div className="relative w-full rounded-3xl p-[1.5px] sm:p-[2px] bg-gradient-to-r from-pink-300 via-rose-400 via-yellow-200 via-sky-300 to-white shadow-2xl overflow-hidden">
+        {/* Inner Card Container - 100% full opacity, sharp border with no blur shadow */}
+        <div className="relative w-full h-full rounded-[22px] bg-[#030917] p-6 sm:p-7 lg:p-8 overflow-hidden">
+          {/* Subtle top inner highlight */}
+          <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/25 to-transparent pointer-events-none" />
+
+          {/* Ambient subtle corner glow */}
+          <div className="absolute -top-24 -right-24 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
+
+          {/* Card Header Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-800/80 mb-6">
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs sm:text-sm font-bold text-cyan-400 bg-cyan-950/70 border border-cyan-500/30 px-3 py-1 rounded-full shadow-inner">
+                PROJECT // {project.number}
+              </span>
+              <span className="font-mono text-xs text-slate-400 uppercase tracking-wider hidden sm:inline">
+                {project.category}
+              </span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[11px] font-mono text-slate-400 uppercase">
+                {index + 1} OF {total}
+              </span>
+            </div>
+          </div>
+
+          {/* Card Main Grid: Left Details, Right Visual */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            {/* Left Column: Details & Live Links (No tech stack) */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <div>
+                  <span className="font-mono text-[11px] text-cyan-400/90 uppercase tracking-widest sm:hidden block mb-1">
+                    {project.category}
+                  </span>
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-sans tracking-tight">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed font-normal">
+                  {project.shortDescription}
+                </p>
+
+                {/* Key Feature / Result Badge */}
+                <div className="flex items-start gap-2.5 p-3 sm:p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-500/20 text-xs sm:text-sm text-cyan-200/95 shadow-sm">
+                  <Sparkles className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <span className="leading-snug">{project.keyFeature}</span>
+                </div>
+              </div>
+
+              {/* Only Live Links Buttons */}
+              <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-slate-950 text-xs sm:text-sm font-mono font-bold transition-all duration-200 hover:shadow-[0_0_28px_rgba(245,158,11,0.5)] hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    <span>LIVE DEMO</span>
+                    <ArrowUpRight className="w-4 h-4 font-bold" />
+                  </a>
+                )}
+
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 hover:border-cyan-400/60 hover:bg-slate-800 text-slate-200 text-xs sm:text-sm font-mono font-medium transition-all duration-200 shadow-sm hover:text-white"
+                  >
+                    <GithubIcon className="w-4 h-4 text-slate-200" />
+                    <span>SOURCE CODE</span>
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Right Column: Large Project Screenshot / Visual Area */}
+            <div className="lg:col-span-5 flex flex-col">
+              <div className="relative w-full h-full min-h-[250px] sm:min-h-[300px] lg:min-h-[350px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#030914] via-[#050e1f] to-slate-950 border border-slate-800/90 shadow-inner flex flex-col">
+                {/* Window Header Frame Bar */}
+                <div className="flex items-center justify-between px-3.5 py-2 border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md z-10 shrink-0">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                  </div>
+                  <div className="flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                    <span className="text-cyan-400">sys://</span>
+                    <span>{project.id}.prod</span>
+                  </div>
+                  <div className="w-2 h-2 rounded-full bg-cyan-400/40" />
+                </div>
+
+                {/* Visual Body: If image set, render; else high-tech preview blueprint */}
+                <div className="relative flex-1 w-full flex items-center justify-center p-4 overflow-hidden">
+                  {project.imageUrl && project.imageUrl.trim() !== "" ? (
+                    <Image
+                      src={project.imageUrl}
+                      alt={`${project.title} Preview Screenshot`}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover object-top transition-transform duration-700 ease-out hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div className="relative w-full h-full flex flex-col items-center justify-center text-center p-6 tech-grid-pattern">
+                      {/* Concentric radar rings */}
+                      <div className="absolute w-44 h-44 rounded-full border border-cyan-500/15 animate-pulse pointer-events-none" />
+                      <div className="absolute w-28 h-28 rounded-full border border-cyan-500/25 pointer-events-none" />
+                      <div className="absolute w-14 h-14 rounded-full border border-cyan-400/40 bg-cyan-500/10 pointer-events-none" />
+
+                      {/* Central Preview Info */}
+                      <div className="relative z-10 flex flex-col items-center gap-2">
+                        <div className="p-3 rounded-2xl bg-slate-900/90 border border-cyan-500/30 text-cyan-400 shadow-lg">
+                          <ImageIcon className="w-6 h-6" />
+                        </div>
+                        <span className="font-mono text-xs font-semibold text-slate-200 mt-1">
+                          Screenshot Preview
+                        </span>
+                        <span className="font-mono text-[10px] text-slate-400 max-w-[200px]">
+                          Add visual image URL in{" "}
+                          <code className="text-cyan-300">lib/projects.ts</code>
+                        </span>
+                      </div>
+
+                      {/* Bottom floating telemetry status */}
+                      <div className="absolute bottom-3 inset-x-3 flex items-center justify-between text-[10px] font-mono text-slate-500 px-3 py-1.5 rounded-lg bg-slate-950/80 border border-slate-800">
+                        <span className="text-emerald-400 flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                          READY FOR ASSETS
+                        </span>
+                        <span className="text-slate-400">1920 × 1080</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function Projects() {
-  const [filter, setFilter] = useState<string>("all");
-
-  const primaryProject = PROJECTS.find((p) => p.isPrimary);
-  const secondaryProjects = PROJECTS.filter((p) => !p.isPrimary);
-
   return (
     <section
       id="projects"
       aria-label="Engineered Projects & Systems"
-      className="relative w-full py-28 px-6 sm:px-10 lg:px-16 border-t border-slate-900 bg-[#020814]"
+      className="relative w-full py-28 px-4 sm:px-8 lg:px-16 border-t border-slate-900 bg-[#020814]"
     >
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[140px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col gap-2 mb-16">
+        <div className="flex flex-col gap-3 mb-16 sm:mb-20">
           <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs tracking-widest uppercase">
             <Terminal className="w-3.5 h-3.5" />
-            <span>03 // FEATURED ENGINEERING SYSTEMS</span>
+            <span>03 // SELECTED WORKS</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white font-sans tracking-tight">
-            Production systems, platforms & architectures.
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white font-sans tracking-tight">
+            Things I&apos;ve built.
           </h2>
-          <p className="text-slate-400 max-w-2xl text-sm sm:text-base mt-1">
-            Real systems built to solve concrete performance, spatial data, and distributed synchronization challenges.
+
+          <p className="text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed mt-1">
+            A vertical showcase of engineered web architectures, real-time telemetry systems, and AI-powered platforms. Scroll through each card to inspect stack implementations and production outcomes.
           </p>
         </div>
 
-        {/* PRIMARY FEATURED PROJECT: Geo Intelligence Platform */}
-        {primaryProject && (
-          <div className="mb-14 rounded-3xl p-8 sm:p-10 lg:p-12 glass-panel border border-cyan-500/30 relative overflow-hidden group">
-            {/* Ambient Corner Glow */}
-            <div className="absolute top-0 right-0 w-96 h-96 radial-glow-cyan opacity-30 pointer-events-none" />
-
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium text-cyan-300 bg-cyan-950/80 border border-cyan-400/40">
-                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-                  PRIMARY SYSTEM HIGHLIGHT
-                </span>
-                <span className="font-mono text-xs text-slate-400">
-                  {primaryProject.category}
-                </span>
-              </div>
-
-              {primaryProject.metrics && (
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-mono text-slate-300">
-                  <Activity className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>{primaryProject.metrics}</span>
-                </div>
-              )}
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              <div className="lg:col-span-7 flex flex-col gap-5">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight font-sans">
-                  {primaryProject.title}
-                </h3>
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-                  {primaryProject.longDescription}
-                </p>
-
-                {/* Key Architectural Highlights */}
-                <div className="mt-2 space-y-2.5">
-                  <span className="text-xs font-mono text-cyan-400 uppercase tracking-wider block mb-1">
-                    ENGINEERING HIGHLIGHTS:
-                  </span>
-                  {primaryProject.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <span className="text-cyan-400 font-mono mt-0.5">▸</span>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech Stack Chips */}
-                <div className="flex flex-wrap items-center gap-2 pt-4">
-                  {primaryProject.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 rounded-md text-xs font-mono bg-slate-900 border border-slate-800 text-slate-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Actions */}
-                <div className="flex items-center gap-4 pt-4">
-                  {primaryProject.githubUrl && (
-                    <a
-                      href={primaryProject.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-400 to-yellow-400 text-slate-950 text-xs font-mono font-bold transition-all hover:shadow-[0_0_20px_rgba(245,158,11,0.45)] hover:scale-[1.02] active:scale-[0.98]"
-                    >
-                      <GithubIcon className="w-4 h-4 text-slate-950" />
-                      <span>VIEW SOURCE</span>
-                    </a>
-                  )}
-                  {primaryProject.liveUrl && (
-                    <a
-                      href={primaryProject.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-amber-400/15 border border-amber-400/50 text-amber-300 text-xs font-mono font-medium transition-all hover:bg-amber-400/25 hover:text-white hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]"
-                    >
-                      <span>LIVE DEMO</span>
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              {/* Interactive Mock Schematic Preview */}
-              <div className="lg:col-span-5 rounded-2xl bg-slate-950/80 border border-cyan-500/20 p-6 flex flex-col gap-4 relative overflow-hidden shadow-inner">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                    <span className="text-[11px] font-mono text-slate-400 ml-2">
-                      geo_viewport_pipeline.rs
-                    </span>
-                  </div>
-                  <span className="text-[10px] font-mono text-cyan-400">
-                    60.2 FPS
-                  </span>
-                </div>
-
-                {/* Spatial Grid Schematic */}
-                <div className="h-56 rounded-lg bg-[#030914] border border-slate-800 relative flex items-center justify-center tech-grid-pattern overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#020814] via-transparent to-transparent" />
-                  
-                  {/* Concentric radar rings */}
-                  <div className="absolute w-44 h-44 rounded-full border border-cyan-500/20 animate-pulse" />
-                  <div className="absolute w-28 h-28 rounded-full border border-cyan-500/30" />
-                  <div className="absolute w-12 h-12 rounded-full border border-cyan-400/40 bg-cyan-500/10" />
-
-                  {/* Pulsing spatial points */}
-                  <div className="absolute top-1/4 left-1/3 flex items-center gap-1.5 px-2 py-0.5 rounded bg-slate-900/90 border border-cyan-400/40 text-[9px] font-mono text-cyan-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
-                    Cluster Alpha [14.2k pts]
-                  </div>
-
-                  <div className="absolute bottom-1/4 right-1/4 flex items-center gap-1.5 px-2 py-0.5 rounded bg-slate-900/90 border border-slate-700 text-[9px] font-mono text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                    Sector Bravo [38.1k pts]
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 text-xs font-mono text-slate-400 pt-1">
-                  <div>
-                    <span className="text-slate-500 block text-[10px]">PIPELINE:</span>
-                    <span className="text-slate-200">WebGL 2.0 / PostGIS</span>
-                  </div>
-                  <div>
-                    <span className="text-slate-500 block text-[10px]">QUERY RESOLUTION:</span>
-                    <span className="text-cyan-400">Sub-10ms Spatial</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* SECONDARY PROJECTS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {secondaryProjects.map((project) => (
-            <div
+        {/* Single Shared Sticky Stacking Container */}
+        <div className="relative w-full pb-16">
+          {PROJECTS.map((project, index) => (
+            <ProjectCard
               key={project.id}
-              className="rounded-2xl p-6 sm:p-8 glass-panel glass-panel-hover flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between pb-4 border-b border-slate-800/80 mb-5">
-                  <span className="text-[11px] font-mono text-cyan-400 uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                  <div className="w-2 h-2 rounded-full bg-cyan-400/40 group-hover:bg-cyan-400 transition-colors" />
-                </div>
-
-                <h4 className="text-xl font-bold text-white font-sans mb-3 group-hover:text-cyan-300 transition-colors">
-                  {project.title}
-                </h4>
-
-                <p className="text-sm text-slate-400 leading-relaxed font-normal mb-5">
-                  {project.description}
-                </p>
-
-                {project.metrics && (
-                  <div className="mb-5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-900/60 border border-slate-800 text-[11px] font-mono text-slate-300">
-                    <span className="w-1 h-1 rounded-full bg-emerald-400" />
-                    <span>{project.metrics}</span>
-                  </div>
-                )}
-
-                {/* Features bullet list */}
-                <div className="space-y-1.5 mb-6 text-xs text-slate-400">
-                  {project.features.slice(0, 2).map((feat, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-cyan-400/70 font-mono">›</span>
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                {/* Tech chips */}
-                <div className="flex flex-wrap gap-1.5 mb-6 pt-4 border-t border-slate-800/60">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 rounded text-[11px] font-mono bg-slate-900/90 text-slate-300 border border-slate-800/80"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="flex items-center justify-between pt-2">
-                  {project.githubUrl ? (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-white transition-colors"
-                    >
-                      <GithubIcon className="w-3.5 h-3.5" />
-                      <span>CODE</span>
-                    </a>
-                  ) : (
-                    <span className="text-[11px] font-mono text-slate-600">IN DEVELOPMENT</span>
-                  )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-mono text-amber-400 hover:text-amber-300 transition-colors group-hover:underline font-medium"
-                    >
-                      <span>LIVE DEMO</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+              project={project}
+              index={index}
+              total={PROJECTS.length}
+            />
           ))}
         </div>
       </div>

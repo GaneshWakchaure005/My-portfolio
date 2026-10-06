@@ -34,7 +34,7 @@ body {
   background-color: #020814;
   color: #f1f5f9;
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip;
   selection-background-color: #38bdf8;
   selection-color: #020814;
 }
