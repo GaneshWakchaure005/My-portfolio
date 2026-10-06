@@ -15,21 +15,26 @@ export function Achievements() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col gap-2 mb-16">
-          <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs tracking-widest uppercase">
-            <Terminal className="w-3.5 h-3.5" />
-            <span>05 // HONORS & RECOGNITION</span>
+        <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
+          <div className="flex items-center gap-2.5 text-amber-400 font-mono text-xs sm:text-sm tracking-widest uppercase mb-3">
+            <span className="w-6 h-[2px] bg-amber-400" />
+            <span>HONORS & RECOGNITION</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white font-sans tracking-tight">
-            Engineering milestones & distinctions.
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-sans text-white">
+            Engineering milestones &{" "}
+            <span className="text-amber-400 bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">
+              distinctions.
+            </span>
           </h2>
-          <p className="text-slate-400 max-w-2xl text-sm sm:text-base mt-1">
+
+          <p className="text-slate-400 max-w-2xl text-sm sm:text-base mt-4 leading-relaxed font-normal">
             Competitive hackathons, open source packages, and verified industry credentials.
           </p>
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
           {ACHIEVEMENTS.map((item, idx) => {
             const IconComponent = ICONS[idx % ICONS.length];
             return (

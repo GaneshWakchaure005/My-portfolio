@@ -4,7 +4,7 @@ import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
-import { Experience } from "@/components/sections/Experience";
+// import { Experience } from "@/components/sections/Experience";
 import { Achievements } from "@/components/sections/Achievements";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -40,8 +40,6 @@ export default function Home() {
         {/* Section 03: Production Systems & Featured Projects */}
         <Projects />
 
-        {/* Section 04: Career Telemetry & Experience Timeline */}
-        <Experience />
 
         {/* Section 05: Honors, Hackathons & Verifiable Credentials */}
         <Achievements />

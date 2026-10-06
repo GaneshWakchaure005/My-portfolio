@@ -527,25 +527,18 @@ export function Skills() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col gap-2 mb-12 sm:mb-16">
-          <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs tracking-widest uppercase">
-            <Terminal className="w-3.5 h-3.5" />
-            <span>02 // TECHNICAL ECOSYSTEM</span>
+        <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
+          <div className="flex items-center gap-2.5 text-amber-400 font-mono text-xs sm:text-sm tracking-widest uppercase mb-3">
+            <span className="w-6 h-[2px] bg-amber-400" />
+            <span>TECHNICAL ECOSYSTEM</span>
           </div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white font-sans tracking-tight">
-                Specialized stack & engineering arsenal.
-              </h2>
-              <p className="text-slate-400 max-w-2xl text-sm sm:text-base mt-2">
-                Production-tested tools and frameworks organized across four dedicated disciplines. Hover over any technology to explore its stack role and authentic brand profile.
-              </p>
-            </div>
-            <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 bg-cyan-950/40 border border-cyan-800/40 px-3.5 py-2 rounded-full shrink-0">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-300 animate-pulse" />
-              <span>INTERACTIVE LIVE BOARD</span>
-            </div>
-          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-sans text-white">
+            Specialized stack &{" "}
+            <span className="text-amber-400 bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">
+              arsenal.
+            </span>
+          </h2>
         </div>
 
         {/* Master Single Container with Multiple Ordered Rows */}
