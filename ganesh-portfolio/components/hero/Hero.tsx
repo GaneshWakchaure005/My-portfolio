@@ -94,7 +94,7 @@ export function Hero() {
       ref={heroRef}
       id="hero"
       aria-label="Introduction & Interactive Digital Aurora"
-      className="relative w-full min-h-screen lg:h-screen lg:min-h-[720px] lg:max-h-[1100px] overflow-x-hidden lg:overflow-hidden bg-[#020814] flex items-center justify-center selection:bg-cyan-500/20"
+      className="relative w-full max-w-full min-h-screen lg:h-screen lg:min-h-[720px] lg:max-h-[1100px] overflow-hidden bg-[#020814] flex items-center justify-center selection:bg-cyan-500/20"
     >
       {/* 1. Atmospheric Background Image Layer with Subtle Parallax (2-3px) */}
       <div

@@ -11,7 +11,7 @@ export function Achievements() {
     <section
       id="achievements"
       aria-label="Awards & Milestones"
-      className="relative w-full py-28 px-6 sm:px-10 lg:px-16 border-t border-slate-900 bg-[#020814]"
+      className="relative w-full py-28 px-4 sm:px-10 lg:px-16 border-t border-slate-900 bg-[#020814] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}

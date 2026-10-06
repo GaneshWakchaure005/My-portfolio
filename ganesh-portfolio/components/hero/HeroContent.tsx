@@ -45,7 +45,7 @@ export function HeroContent({ containerRef }: HeroContentProps) {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-1"
+          className="w-full max-w-full lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-1"
         >
           {/* Status Indicator */}
           <motion.div

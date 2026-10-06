@@ -28,13 +28,17 @@ html {
   scroll-behavior: smooth;
   color-scheme: dark;
   background-color: #020814;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   background-color: #020814;
   color: #f1f5f9;
   font-family: var(--font-sans);
-  overflow-x: clip;
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
   selection-background-color: #38bdf8;
   selection-color: #020814;
 }

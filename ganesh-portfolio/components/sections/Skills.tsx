@@ -556,7 +556,7 @@ export function Skills() {
                   <div className="flex items-start sm:items-center gap-3">
                     <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 shrink-0 shadow-inner">
                       <RowIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
-                    </div>
+                    </div>  
                     <div>
                       <div className="flex items-center gap-2.5">
                         <span className="font-mono text-xs text-cyan-400 font-semibold tracking-wider">

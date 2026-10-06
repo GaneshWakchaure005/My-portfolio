@@ -76,12 +76,6 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
                 <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed font-normal">
                   {project.shortDescription}
                 </p>
-
-                {/* Key Feature / Result Badge */}
-                <div className="flex items-start gap-2.5 p-3 sm:p-3.5 rounded-xl bg-cyan-950/30 border border-cyan-500/20 text-xs sm:text-sm text-cyan-200/95 shadow-sm">
-                  <Sparkles className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <span className="leading-snug">{project.keyFeature}</span>
-                </div>
               </div>
 
               {/* Only Live Links Buttons */}
@@ -185,7 +179,7 @@ export function Projects() {
     <section
       id="projects"
       aria-label="Engineered Projects & Systems"
-      className="relative w-full py-28 px-4 sm:px-8 lg:px-16 border-t border-slate-900 bg-[#020814]"
+      className="relative w-full py-28 px-4 sm:px-8 lg:px-16 border-t border-slate-900 bg-[#020814] overflow-hidden"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
