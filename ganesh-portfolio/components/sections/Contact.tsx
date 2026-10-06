@@ -13,6 +13,9 @@ const WhatsappIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
 
 export function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,16 +23,45 @@ export function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      window.location.href = `mailto:${DEVELOPER_INFO.email}?subject=${encodeURIComponent(
-        formData.subject || "Project Inquiry"
-      )}&body=${encodeURIComponent(
-        `From: ${formData.name} (${formData.email})\n\n${formData.message}`
-      )}`;
-    }, 600);
+
+    setIsSending(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setFormSubmitted(true);
+
+      // Clear form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -158,10 +190,12 @@ export function Contact() {
                   <Check className="w-6 h-6" />
                 </div>
                 <h4 className="text-xl font-bold text-white font-sans">
-                  Message Prepared!
+                  Message Sent!
                 </h4>
+
                 <p className="text-sm text-slate-400 max-w-sm">
-                  Opening your default mail client with your formatted message. I will review and reply within 24 hours!
+                  Thanks for reaching out! Your message has been sent successfully.
+                  I&apos;ll get back to you as soon as possible.
                 </p>
                 <button
                   type="button"
@@ -241,12 +275,18 @@ export function Contact() {
                   />
                 </div>
 
-                {/* Submit Button */}
+                {errorMessage && (
+                  <p className="text-sm text-red-400 text-center">
+                    {errorMessage}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-4 px-6 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-base transition-all duration-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] hover:shadow-[0_0_35px_rgba(245,158,11,0.4)] cursor-pointer mt-1"
+                  disabled={isSending}
+                  className="w-full py-4 px-6 rounded-xl bg-amber-400 hover:bg-amber-300 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold text-base transition-all duration-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] hover:shadow-[0_0_35px_rgba(245,158,11,0.4)] cursor-pointer mt-1"
                 >
-                  Send Message
+                  {isSending ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}
