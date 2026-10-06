@@ -186,7 +186,7 @@ export function HeroContent({ containerRef }: HeroContentProps) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.8 }}
-        className="flex items-center justify-between pt-6 border-t border-slate-800/40 text-slate-500 mt-6 lg:mt-0"
+        className="flex items-center justify-center pt-6 border-t border-slate-800/40 text-slate-500 mt-6 lg:mt-0"
       >
         <a
           href="#about"
@@ -196,12 +196,6 @@ export function HeroContent({ containerRef }: HeroContentProps) {
           <span>Scroll to explore</span>
           <ArrowDown className="w-3.5 h-3.5 animate-bounce text-cyan-400/80" />
         </a>
-
-        <div className="hidden sm:flex items-center gap-4 text-xs font-mono text-slate-500">
-          <span>LATENCY: &lt;16MS</span>
-          <span>•</span>
-          <span>GPU ACCELERATED</span>
-        </div>
       </motion.div>
     </div>
   );
