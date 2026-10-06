@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     "keyFeature": "From finding a business to sending the first email — discovery, data enrichment, validation, deduplication, lead scoring, AI insights, email extraction, and outreach are connected into one workflow.",
     "githubUrl": "https://github.com/om-patil-builds/geo-intelligence-platform.git",
     "liveUrl": "https://geointel-five.vercel.app/",
-    "imageUrl": ""
+    "imageUrl": "https://res.cloudinary.com/did8mktr3/image/upload/v1791317159/Geo_Intelligence_Platform_Showcase_wcvcss.webp"
   },
   {
   "id": "smart-transit",
@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
   "keyFeature": "Hackathon-winning system with real-time GPS tracking, live vehicle location streaming, passenger tracking, and an admin dashboard for fleet monitoring and management.",
   "githubUrl": "https://github.com/GaneshWakchaure005/smart-transit",
   "liveUrl": "https://github.com/GaneshWakchaure005/smart-transit",
-  "imageUrl": ""
+  "imageUrl": "https://res.cloudinary.com/did8mktr3/image/upload/v1791317159/smart-transit_v1gl8g.webp"
 },
 {
   "id": "om-arts",
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
   "keyFeature": "Dynamic admin-managed catalog with online idol booking, automated bill generation, customer lead capture, and centralized product management for wholesale and retail operations.",
   "githubUrl": "https://github.com/GaneshWakchaure005/Om-Arts-business-project.git",
   "liveUrl": "https://om-arts.in/",
-  "imageUrl": ""
+  "imageUrl": "https://res.cloudinary.com/did8mktr3/image/upload/v1791317158/om-arts_xq20qc.webp"
 },
 {
   "id": "inventoprocess",
@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
   "keyFeature": "Responsive industrial product catalog with structured product information, enquiry-driven lead generation, and a professional digital presence tailored for B2B customers.",
   "githubUrl": "https://github.com/GaneshWakchaure005/invento-process-solutions-project.git",
   "liveUrl": "https://inventoprocess.com",
-  "imageUrl": ""
+  "imageUrl": "https://res.cloudinary.com/did8mktr3/image/upload/v1791317159/invento-process_i52f2t.webp"
 },
 {
   "id": "kavachx",
@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
   "keyFeature": "QR-based member onboarding with owner approval, digital attendance tracking, membership management, payment tracking, and a centralized gym owner dashboard.",
   "githubUrl": "https://github.com/chetan3625/kavachx.git",
   "liveUrl": "https://github.com/chetan3625/kavachx.git",
-  "imageUrl": ""
+  "imageUrl": "https://res.cloudinary.com/did8mktr3/image/upload/v1791317159/kavachx_soniz7.webp"
 }
 
 ];

@@ -125,7 +125,7 @@ function ProjectCard({ project, index, total }: ProjectCardProps) {
 
                 {/* Visual Body: If image set, render; else high-tech preview blueprint */}
                 <div className="relative flex-1 w-full flex items-center justify-center p-4 overflow-hidden">
-                  {project.imageUrl && project.imageUrl.trim() !== "" ? (
+                  {project.imageUrl ? (
                     <Image
                       src={project.imageUrl}
                       alt={`${project.title} Preview Screenshot`}
