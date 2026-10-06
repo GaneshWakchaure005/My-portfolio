@@ -29,11 +29,8 @@ export function Footer() {
         </div>
 
         {/* System telemetry indicator */}
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/60 border border-slate-800 text-[11px] font-mono text-slate-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span>ALL CLUSTERS OPERATIONAL</span>
-          <span className="text-slate-600">•</span>
-          <span>© {new Date().getFullYear()}</span>
+        <div className="flex items-center gap-2 px-3 py-1  text-[15px] font-mono text-white">
+          <span className="text-slate-600">© {new Date().getFullYear()} Ganesh Wakchaure. All rights reserved.</span>
         </div>
 
         {/* Socials & Back to Top */}
