@@ -43,7 +43,16 @@ export const DEVELOPER_INFO = {
   linkedin: "https://www.linkedin.com/in/ganesh-wakchaure-dev",
   instagram: "https://www.instagram.com/ganesh_wakchaure_005/",
   siteUrl: "https://ganeshwakchaure.vercel.app",
-  metadataTags: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Next.js"],
+  metadataTags: [
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySQL",
+    "Tailwind CSS",
+    "Cloudflare",
+  ],
 };
 
 export const NAV_LINKS = [
