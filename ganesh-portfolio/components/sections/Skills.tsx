@@ -9,6 +9,7 @@ import {
   Cloud,
   Wrench,
   Sparkles,
+  type LucideIcon,
 } from "lucide-react";
 
 // ==========================================
@@ -27,7 +28,7 @@ interface SkillRow {
   id: string;
   title: string;
   tagline: string;
-  icon: React.ElementType;
+  icon: LucideIcon;
   skills: SkillDefinition[];
 }
 
