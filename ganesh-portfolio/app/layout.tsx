@@ -19,31 +19,17 @@ const siteUrl = DEVELOPER_INFO.siteUrl || "https://ganeshwakchaure.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ganesh Wakchaure | Full Stack Developer & Software Engineer",
+    default: "Ganesh Wakchaure",
     template: "%s | Ganesh Wakchaure",
   },
   description:
-    "Official portfolio of Ganesh Wakchaure, Full Stack Developer and Computer Engineering student at SVIT Nashik. Specializing in React.js, Node.js, Express.js, MongoDB, Next.js, and high-performance web systems.",
+    "Official portfolio and personal website of Ganesh Wakchaure. Full Stack Developer and Computer Engineering student at SVIT Nashik specializing in React.js, Node.js, Express.js, MongoDB, Next.js, and high-performance web systems.",
   keywords: [
     "Ganesh Wakchaure",
-    "Full Stack Developer",
-    "Software Engineer",
-    "MERN Stack Developer",
-    "React Developer",
-    "Node.js Developer",
-    "Express.js",
-    "MongoDB",
-    "Next.js Developer",
-    "TypeScript",
-    "Tailwind CSS",
-    "SVIT Nashik",
-    "SmartTransit",
-    "Geo Intelligence Platform",
-    "Full Stack Engineer Nashik",
-    "Full Stack Engineer Pune",
-    "Web Developer Portfolio",
-    "Interactive Portfolio",
-    "Three.js Developer",
+    "Ganesh Wakchaure official",
+    "Ganesh Wakchaure Portfolio",
+    "Ganesh Wakchaure Website",
+    "Ganesh Wakchaure Developer"
   ],
   authors: [{ name: "Ganesh Wakchaure", url: DEVELOPER_INFO.github }],
   creator: "Ganesh Wakchaure",
@@ -58,11 +44,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Ganesh Wakchaure | Full Stack Developer & Software Engineer",
+    title: "Ganesh Wakchaure",
     description:
-      "Building scalable full stack softwares using modern technologies. ",
+      "Official portfolio and personal website of Ganesh Wakchaure. Building scalable full stack softwares using modern technologies.",
     url: siteUrl,
-    siteName: "Ganesh Wakchaure Portfolio",
+    siteName: "Ganesh Wakchaure",
     locale: "en_US",
     type: "website",
     images: [
@@ -76,9 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ganesh Wakchaure | Full Stack Developer & Software Engineer",
+    title: "Ganesh Wakchaure",
     description:
-      "Building scalable, intelligent and user-focused web applications with modern full stack architectures.",
+      "Official portfolio and personal website of Ganesh Wakchaure.",
     images: ["/images/ganesh-profile.png"],
     creator: "@ganesh_dev",
   },

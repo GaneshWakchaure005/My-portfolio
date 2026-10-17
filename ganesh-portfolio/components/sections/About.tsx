@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Terminal, Briefcase, Rocket, Layers } from "lucide-react";
+import { Terminal, Briefcase, Rocket, Layers, Download, ArrowUpRight } from "lucide-react";
 import { DEVELOPER_INFO } from "@/lib/constants";
 
 export function About() {
@@ -72,6 +72,29 @@ export function About() {
             <p className="text-slate-400">
               My engineering philosophy revolves around simplicity, modular decoupling, and verifiable performance. When I design a system, it is built to scale gracefully, withstand traffic spikes, and deliver exceptional developer and end-user experiences.
             </p>
+
+            {/* Action Buttons */}
+            <div className="pt-4 flex flex-wrap items-center gap-4">
+              <a
+                href={DEVELOPER_INFO.resumeUrl}
+                download="Ganesh_Wakchaure_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="about-download-cv"
+                className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 text-slate-950 font-semibold text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:scale-[1.02] active:scale-[0.98] border border-yellow-300/80 shadow-md shadow-amber-950/40"
+              >
+                <Download className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                <span>Download CV</span>
+              </a>
+
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 font-medium text-sm transition-all duration-300 hover:border-cyan-400/50 hover:text-cyan-300 active:scale-[0.98]"
+              >
+                <span>Get in Touch</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-cyan-400" />
+              </a>
+            </div>
           </div>
         </div>
 

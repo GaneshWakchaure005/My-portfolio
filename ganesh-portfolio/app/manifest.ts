@@ -3,7 +3,7 @@ import { DEVELOPER_INFO } from "@/lib/constants";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${DEVELOPER_INFO.name} — Full Stack Developer Portfolio`,
+    name: DEVELOPER_INFO.name,
     short_name: DEVELOPER_INFO.name,
     description: DEVELOPER_INFO.tagline,
     start_url: "/",

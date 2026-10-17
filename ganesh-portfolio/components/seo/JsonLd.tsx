@@ -53,8 +53,12 @@ export function JsonLd() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: `${DEVELOPER_INFO.name} — Full Stack Developer`,
-    alternateName: "Ganesh Wakchaure Portfolio",
+    name: DEVELOPER_INFO.name,
+    alternateName: [
+      "Ganesh Wakchaure",
+      "Ganesh Wakchaure Portfolio",
+      "Ganesh Wakchaure Website",
+    ],
     url: baseUrl,
     description: DEVELOPER_INFO.tagline,
     author: {

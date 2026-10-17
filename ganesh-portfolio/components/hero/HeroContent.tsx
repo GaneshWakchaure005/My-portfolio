@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, type Variants } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Terminal, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Terminal, Sparkles, Download } from "lucide-react";
 import { DEVELOPER_INFO } from "@/lib/constants";
 import { GithubIcon, LinkedinIcon, InstagramIcon } from "@/components/ui/Icons";
 import { Portrait } from "./Portrait";
@@ -61,14 +61,12 @@ export function HeroContent({ containerRef }: HeroContentProps) {
             </span>
           </motion.div>
 
-          {/* Developer Name */}
+          {/* Developer Name - Sole H1 tag for SEO */}
           <motion.h1
             variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white uppercase font-sans mb-3"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight uppercase font-sans mb-3 bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent"
           >
-            <span className="bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
-              {DEVELOPER_INFO.name}
-            </span>
+            {DEVELOPER_INFO.name}
           </motion.h1>
 
           {/* Professional Title */}
@@ -131,6 +129,18 @@ export function HeroContent({ containerRef }: HeroContentProps) {
             >
               <span>View Projects</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 font-bold" />
+            </a>
+
+            <a
+              href={DEVELOPER_INFO.resumeUrl}
+              download="Ganesh_Wakchaure_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="hero-cta-cv"
+              className="group inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-cyan-500/10 border border-cyan-400/40 text-cyan-300 font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-cyan-400 hover:text-slate-950 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] active:scale-[0.98]"
+            >
+              <Download className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+              <span>Download CV</span>
             </a>
 
             <a
